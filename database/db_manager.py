@@ -2,10 +2,11 @@ import mysql.connector
 
 # Configuracion de conexion a WampServer
 DB_CONFIG = {
-    'host': 'localhost',
-    'user': 'root',
-    'password': '',
-    'database': 'cefiro_db'
+    'host': os.environ.get('MYSQLHOST', 'localhost'),
+    'user': os.environ.get('MYSQLUSER', 'root'),
+    'password': os.environ.get('MYSQLPASSWORD', ''),
+    'database': os.environ.get('MYSQLDATABASE', 'cefiro_db'),
+    'port': int(os.environ.get('MYSQLPORT', 3306))
 }
 
 def guardar_mensaje(nombre, email, mensaje):
