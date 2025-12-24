@@ -1,4 +1,5 @@
 import mysql.connector
+import os
 
 # Configuracion de conexion a WampServer
 DB_CONFIG = {
