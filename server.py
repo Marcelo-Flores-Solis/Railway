@@ -7,7 +7,7 @@ from urllib.parse import parse_qs
 # IMPORTAMOS NUESTRO NUEVO ARCHIVO
 import database.db_manager as db_manager 
 
-PORT = 8000
+PORT = int(os.environ.get("PORT", 8000))
 TEMPLATE_DIR = 'templates'
 ASSET_DIR = 'assets'
 
