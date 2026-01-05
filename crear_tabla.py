@@ -1,7 +1,7 @@
 import mysql.connector
 
 config = {
-    'host': 'mysql.railway.internal',     
+    'host': 'mysql://root:hiOlGXJZEDkyQKWcrxzISOsRaXGcBpho@ballast.proxy.rlwy.net:15344/railway',     
     'user': 'root',      
     'password': 'hiOlGXJZEDkyQKWcrxzISOsRaXGcBpho', 
     'database': 'railway', 
