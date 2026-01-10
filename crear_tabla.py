@@ -1,20 +1,20 @@
 import mysql.connector
 
+# CONFIGURACIÓN PÚBLICA (La que funciona desde tu casa)
 config = {
-    'host': 'mysql://root:hiOlGXJZEDkyQKWcrxzISOsRaXGcBpho@ballast.proxy.rlwy.net:15344/railway',     
-    'user': 'root',      
-    'password': 'hiOlGXJZEDkyQKWcrxzISOsRaXGcBpho', 
-    'database': 'railway', 
-    'port': 3306                               
+    'host': 'ballast.proxy.rlwy.net',        # Tu Host Público
+    'user': 'root',
+    'password': 'hiOlGXJZEDkyQKWcrxzISOsRaXGcBpho', # Tu contraseña
+    'database': 'railway',                   # Nombre de la DB
+    'port': 15344                            # Tu Puerto Público (¡OJO: 15344!)
 }
 
 try:
-    # 1. Conectamos
-    print("Conectando a la nube...")
+    print(f"Conectando a {config['host']}...")
     conexion = mysql.connector.connect(**config)
     cursor = conexion.cursor()
 
-    # 2. El código SQL para crear la tabla
+    # SQL para crear la tabla
     sql = """
     CREATE TABLE IF NOT EXISTS mensajes (
         id INT AUTO_INCREMENT PRIMARY KEY,
@@ -24,13 +24,13 @@ try:
         fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     );
     """
-
+    
     cursor.execute(sql)
     print("tabla creada")
-
-    cursor.execute("INSERT INTO mensajes (nombre, email, mensaje) VALUES ('Admin', 'test@railway.app', 'Base de datos conectada OK')")
+    
+    # Insertamos un mensaje de prueba para que no se vea vacío
+    cursor.execute("INSERT INTO mensajes (nombre, email, mensaje) VALUES ('Sistema', 'admin@railway.app', 'Base de datos inicializada correctamente')")
     conexion.commit()
-    print("Mensaje de prueba insertado.")
 
 except Exception as e:
     print(f"Error: {e}")
