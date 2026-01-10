@@ -1,19 +1,21 @@
 import mysql.connector
-import os
 
-# Configuracion de conexion a WampServer
-config = {
-    'host': 'ballast.proxy.rlwy.net',     
-    'user': 'root',      
-    'password': 'hiOlGXJZEDkyQKWcrxzISOsRaXGcBpho', 
-    'database': 'railway', 
-    'port': 15344                               
+# --- CONFIGURACIÓN DE LA BASE DE DATOS ---
+# (Debe estar aquí afuera, al principio del archivo)
+DB_CONFIG = {
+    'host': 'ballast.proxy.rlwy.net',        # Tu Host Público
+    'user': 'root',
+    'password': 'hiOlGXJZEDkyQKWcrxzISOsRaXGcBpho', # Tu contraseña
+    'database': 'railway',                   # Nombre de la base de datos
+    'port': 15344                            # Tu Puerto Público
 }
 
 def guardar_mensaje(nombre, email, mensaje):
     """Guarda un nuevo contacto en la base de datos"""
     conexion = None
     try:
+        print(f"Conectando a: {DB_CONFIG['host']}...") # DEBUG
+        
         conexion = mysql.connector.connect(**DB_CONFIG)
         cursor = conexion.cursor()
         
@@ -39,12 +41,10 @@ def obtener_mensajes():
         conexion = mysql.connector.connect(**DB_CONFIG)
         cursor = conexion.cursor()
         
-        # Ordenamos por fecha descendente (lo mas nuevo primero)
         cursor.execute("SELECT id, nombre, email, mensaje, fecha FROM mensajes ORDER BY fecha DESC")
         resultados = cursor.fetchall()
         
         for row in resultados:
-            # Construimos el HTML aqui para que el server.py este limpio
             filas_html += f"""
             <tr>
                 <td>{row[0]}</td>
@@ -57,7 +57,7 @@ def obtener_mensajes():
             
     except mysql.connector.Error as err:
         print(f"DB Error: {err}")
-        filas_html = "<tr><td colspan='5'>Error de conexión a la base de datos</td></tr>"
+        filas_html = f"<tr><td colspan='5'>Error de conexión: {err}</td></tr>"
     finally:
         if conexion and conexion.is_connected():
             cursor.close()
