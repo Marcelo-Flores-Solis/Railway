@@ -1,18 +1,46 @@
-# Cefiro Productions
+# Pagina Personal
 
-### 🔗 URL del Proyecto
-* **Estado:** Ejecución Local (Requiere Python y MySQL/WampServer)
-* **Repositorio:** 
+### Enlaces del Proyecto
+* **Sitio Web en Vivo (Railway):** https://web-production-4c97e.up.railway.app/
+* **Repositorio:** https://github.com/Marcelo-Flores-Solis/Railway
 
-### 📝 Descripción
-Cefiro Productions aplicacion web personal que fusiona múltiples intereses: ajedrez, música (piano), videojuegos y series. El proyecto implementa una arquitectura , utilizando un servidor HTTP personalizado en Python que gestiona el enrutamiento y la lógica de backend. Cuenta con un sistema de contacto funcional que almacena mensajes en una base de datos MySQL, un panel de administración protegido por login para gestionar dichos mensajes, y una interfaz frontend moderna con animaciones JavaScript y diseño responsivo.
+---
 
-### 🛠️ Tecnologías Utilizadas
+### Descripción
+Aplicación web **Full Stack** desarrollada como proyecto final para el curso de Introducción al Desarrollo Web (UNSA).
 
-El proyecto ha sido desarrollado utilizando las siguientes tecnologías:
+El proyecto destaca por implementar una arquitectura **cliente-servidor desde cero**. En lugar de utilizar frameworks de alto nivel (como Flask o Django), el backend ha sido construido utilizando librerías nativas de Python (`http.server`) para gestionar el enrutamiento y las peticiones HTTP manualmente. El sistema cuenta con persistencia de datos en la nube mediante **MySQL**, un panel de administración seguro con estadísticas en tiempo real y módulos interactivos en el frontend.
 
-* **HTML5:** Estructura semántica de todas las páginas.
-* **CSS3:** Diseño responsivo, variables CSS, Flexbox, Grid y animaciones personalizadas.
-* **JavaScript:** Lógica del cliente, animaciones "Scroll Reveal" y sintetizador de audio (Web Audio API) para el piano virtual.
-* **Python:** Servidor backend (`http.server`), manejo de rutas, lógica de login y conexión a base de datos.
-* **SQL (MySQL):** Base de datos relacional para el almacenamiento persistente de los mensajes de contacto.
+### Características Principales
+* **Backend Nativo:** Servidor HTTP personalizado escrito en Python puro.
+* **Base de Datos Cloud:** Conexión remota a MySQL alojada en Railway.
+* **Panel de Administración (Dashboard):**
+    * Acceso protegido por Login.
+    * Visualización de mensajes de contacto.
+    * Métricas en tiempo real (Total de mensajes, Usuarios únicos).
+* **Interactividad:** Piano virtual con Web Audio API y formulario de contacto funcional.
+
+---
+
+### Tecnologías Utilizadas
+
+#### Frontend
+* **HTML5:** Estructura semántica.
+* **CSS3:** Diseño responsivo, Grid/Flexbox y animaciones personalizadas.
+* **JavaScript (ES6):** Lógica del cliente, validaciones y sintetizador de audio.
+
+#### Backend
+* **Python 3:** Lógica del servidor y manejo de rutas (`http.server`, `socketserver`).
+* **MySQL Connector:** Gestión de conexiones y consultas SQL.
+
+#### Infraestructura
+* **Railway:** Plataforma de despliegue (PaaS) y alojamiento de Base de Datos.
+* **Git & GitHub:** Control de versiones.
+
+---
+
+### Credenciales de Acceso (Demo)
+Para probar el panel de administración, puedes acceder a la ruta `/login` 
+
+* **Usuario:** `admin`
+* **Contraseña:** `123`
