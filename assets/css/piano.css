@@ -1,24 +1,23 @@
-/* --- 1. FUENTES Y PALETA DE COLORES (ALQUIMIA) --- */
+
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&display=swap');
 
 :root {
-    --wood-dark: #3e2723;     /* Café oscuro (Madera vieja) */
-    --wood-light: #5d4037;    /* Café medio */
-    --parchment: #fdfbf7;     /* Color pergamino/papel */
-    --ink: #2b2b2b;           /* Texto oscuro */
-    --gold: #d4a373;          /* Detalles dorados */
-    --highlight: #e6ccb2;     /* Beige suave */
+    --wood-dark: #3e2723;    
+    --wood-light: #5d4037;   
+    --parchment: #fdfbf7;    
+    --ink: #2b2b2b;          
+    --gold: #d4a373;          
+    --highlight: #e6ccb2;   
 }
 
 body {
-    background-color: #f5f0e1; /* Fondo general crema cálido */
+    background-color: #f5f0e1;
     color: var(--ink);
     font-family: 'Dosis', sans-serif;
     line-height: 1.6;
 }
 
-/* --- 2. HEADER PERSONALIZADO (Madera) --- */
-/* Sobrescribimos el header de main.css para esta página */
+/*header estilo madera */
 .site-header {
     background-color: var(--wood-dark) !important;
     border-bottom: 4px solid var(--gold);
@@ -26,16 +25,16 @@ body {
 }
 
 .nav-link {
-    color: #eaddcf !important; /* Beige claro */
+    color: #eaddcf !important; 
 }
 .nav-link:hover, .nav-link.active {
     color: var(--gold) !important;
 }
 
-/* --- 3. HERO SECTION (La Alquimia) --- */
+/* Hero Section */
 .hero-music {
     background: linear-gradient(rgba(40, 20, 10, 0.7), rgba(40, 20, 10, 0.9)), 
-                url('../../assets/imagenes/FondoPiano.jfif'); /* Puedes cambiar esta imagen por una de piano */
+                url('../../assets/imagenes/FondoPiano.jfif'); 
     background-size: cover;
     background-position: center;
     padding: 100px 20px;
@@ -58,7 +57,7 @@ body {
     color: #f0e6d2;
 }
 
-/* --- 4. TÍTULOS DE SECCIÓN --- */
+
 .section-title {
     font-size: 2.2rem;
     color: var(--wood-dark);
@@ -74,7 +73,7 @@ body {
     margin: 10px auto 30px;
 }
 
-/* --- 5. GRID DE CONCEPTOS (Altozano) --- */
+/* Grid de Conceptos */
 .altozano-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -87,7 +86,7 @@ body {
     padding: 30px;
     border-radius: 8px;
     border: 1px solid #e0e0e0;
-    border-left: 5px solid var(--wood-light); /* Borde lateral tipo libro */
+    border-left: 5px solid var(--wood-light); 
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     transition: transform 0.3s;
 }
@@ -105,15 +104,15 @@ body {
     padding-bottom: 10px;
 }
 
-/* Listas dentro de las tarjetas */
+
 .analogy-list li, .check-list li {
     margin-bottom: 8px;
-    list-style: none; /* Quitamos puntos por defecto */
+    list-style: none; 
     position: relative;
     padding-left: 20px;
 }
 
-/* Iconos personalizados con CSS */
+
 .analogy-list li::before { content: "♪"; color: var(--wood-light); position: absolute; left: 0; font-weight: bold; }
 .check-list li::before { content: "✓"; color: var(--gold); position: absolute; left: 0; font-weight: bold; }
 
@@ -127,11 +126,11 @@ blockquote {
     padding: 10px;
 }
 
-/* --- 6. PIANO VIRTUAL (Estilo Realista) --- */
+/* Piano Virtual */
 .piano-container {
     display: flex;
     justify-content: center;
-    background: #222; /* Fondo del mueble del piano */
+    background: #222; 
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 15px 30px rgba(0,0,0,0.4);
@@ -189,7 +188,7 @@ blockquote {
     transform: translateY(2px);
 }
 
-/* --- 7. ANÁLISIS MUSICAL (Sección Oscura) --- */
+
 .bg-dark-theme {
     background-color: var(--wood-dark);
     color: #eaddcf;
@@ -200,16 +199,16 @@ blockquote {
 .bg-dark-theme p { color: #ccc; }
 
 .music-sheet-container {
-    background: #fff; /* Hoja de papel */
+    background: #fff; 
     color: #333;
     padding: 40px;
     border-radius: 5px;
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
     margin-top: 30px;
-    font-family: 'Georgia', serif; /* Fuente más clásica para la teoría */
+    font-family: 'Georgia', serif; 
 }
 
-/* Cabecera de la partitura */
+
 .melody-header {
     display: flex;
     justify-content: space-between;
@@ -220,7 +219,7 @@ blockquote {
     font-style: italic;
 }
 
-/* Visualización de notas */
+
 .melody-line {
     margin-bottom: 30px;
     background: rgba(0,0,0,0.03);
@@ -259,16 +258,16 @@ blockquote {
 
 .note-box.long {
     padding-right: 30px;
-    border-right: 4px solid var(--gold); /* Indica duración */
+    border-right: 4px solid var(--gold); 
 }
 
 .note-box.high {
-    transform: translateY(-5px); /* Visualmente más agudo */
+    transform: translateY(-5px);
     box-shadow: 0 3px 0 rgba(0,0,0,0.2);
 }
 
 .theory-note {
-    background: #fdfae7; /* Nota amarilla tipo post-it */
+    background: #fdfae7; 
     padding: 20px;
     border-left: 4px solid #f1c40f;
     margin-top: 20px;

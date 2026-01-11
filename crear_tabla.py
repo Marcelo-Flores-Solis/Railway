@@ -1,12 +1,11 @@
 import mysql.connector
 
-# CONFIGURACIÓN PÚBLICA (La que funciona desde tu casa)
 config = {
-    'host': 'ballast.proxy.rlwy.net',        # Tu Host Público
+    'host': 'ballast.proxy.rlwy.net',        
     'user': 'root',
-    'password': 'hiOlGXJZEDkyQKWcrxzISOsRaXGcBpho', # Tu contraseña
-    'database': 'railway',                   # Nombre de la DB
-    'port': 15344                            # Tu Puerto Público (¡OJO: 15344!)
+    'password': 'hiOlGXJZEDkyQKWcrxzISOsRaXGcBpho', 
+    'database': 'railway',                   
+    'port': 15344                           
 }
 
 try:
@@ -28,7 +27,7 @@ try:
     cursor.execute(sql)
     print("tabla creada")
     
-    # Insertamos un mensaje de prueba para que no se vea vacío
+    # mensaje de prueba
     cursor.execute("INSERT INTO mensajes (nombre, email, mensaje) VALUES ('Sistema', 'admin@railway.app', 'Base de datos inicializada correctamente')")
     conexion.commit()
 

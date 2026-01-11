@@ -1,20 +1,19 @@
 import mysql.connector
 
 # --- CONFIGURACIÓN DE LA BASE DE DATOS ---
-# (Debe estar aquí afuera, al principio del archivo)
 DB_CONFIG = {
-    'host': 'ballast.proxy.rlwy.net',        # Tu Host Público
+    'host': 'ballast.proxy.rlwy.net',       
     'user': 'root',
-    'password': 'hiOlGXJZEDkyQKWcrxzISOsRaXGcBpho', # Tu contraseña
-    'database': 'railway',                   # Nombre de la base de datos
-    'port': 15344                            # Tu Puerto Público
+    'password': 'hiOlGXJZEDkyQKWcrxzISOsRaXGcBpho', 
+    'database': 'railway',                   
+    'port': 15344                           
 }
 
 def guardar_mensaje(nombre, email, mensaje):
     """Guarda un nuevo contacto en la base de datos"""
     conexion = None
     try:
-        print(f"Conectando a: {DB_CONFIG['host']}...") # DEBUG
+        print(f"Conectando a: {DB_CONFIG['host']}...") 
         
         conexion = mysql.connector.connect(**DB_CONFIG)
         cursor = conexion.cursor()
@@ -64,3 +63,33 @@ def obtener_mensajes():
             conexion.close()
             
     return filas_html
+
+def obtener_estadisticas():
+    """Calcula datos para el dashboard"""
+    stats = {"total": 0, "usuarios": 0, "ultimo": "N/A"}
+    conexion = None
+    try:
+        conexion = mysql.connector.connect(**DB_CONFIG)
+        cursor = conexion.cursor()
+        
+       
+        cursor.execute("SELECT COUNT(*) FROM mensajes")
+        stats["total"] = cursor.fetchone()[0]
+        
+       
+        cursor.execute("SELECT COUNT(DISTINCT email) FROM mensajes")
+        stats["usuarios"] = cursor.fetchone()[0]
+        
+        
+        cursor.execute("SELECT fecha FROM mensajes ORDER BY id DESC LIMIT 1")
+        res = cursor.fetchone()
+        if res:
+            stats["ultimo"] = str(res[0]).split()[0] 
+            
+    except Exception as e:
+        print(f"Error Stats: {e}")
+    finally:
+        if conexion and conexion.is_connected():
+            cursor.close()
+            conexion.close()
+    return stats

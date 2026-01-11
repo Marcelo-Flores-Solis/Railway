@@ -8,9 +8,9 @@ body {
     margin: 0;
 }
 
-/* --- 2. HEADER PROFESIONAL (Logo Izq - Menú Der) --- */
+/* Header Profesional */
 .header-series {
-    background-color: #1a0b2e; /* Morado Oscuro */
+    background-color: #1a0b2e; 
     border-bottom: 2px solid #8e44ad;
     padding: 15px 0;
     position: sticky;
@@ -23,7 +23,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 30px;
-    display: flex; /* ESTO ALINEA LOGO Y MENU */
+    display: flex; 
     justify-content: space-between;
     align-items: center;
 }
@@ -59,7 +59,7 @@ body {
     border-radius: 5px;
 }
 
-/* --- 3. HERO (PORTADA) --- */
+
 .hero-series {
     background: linear-gradient(180deg, #2c0e3a 0%, #0b0c15 100%);
     text-align: center;
@@ -79,16 +79,16 @@ body {
     color: #cdb4db;
 }
 
-/* --- 4. GRID DE PÓSTERS (Estilo Netflix/Cine) --- */
+/* Grid de Series */
 .series-grid {
     display: grid;
-    /* Grid automático */
+    
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 30px;
     padding: 40px 0;
 }
 
-/* --- 5. TARJETA (CARD) --- */
+/* Tarjeta de Serie */
 .series-card {
     background: #151520;
     border-radius: 8px;
@@ -99,15 +99,15 @@ body {
 
 .series-card:hover {
     transform: translateY(-10px);
-    border-color: #8e44ad; /* Borde morado al hover */
+    border-color: #8e44ad; 
     box-shadow: 0 0 20px rgba(142, 68, 173, 0.2);
 }
 
-/* Imagen Vertical (Póster) */
+
 .poster {
     position: relative;
     width: 100%;
-    aspect-ratio: 2 / 3; /* Formato Cine Vertical */
+    aspect-ratio: 2 / 3; 
     overflow: hidden;
 }
 
@@ -122,7 +122,7 @@ body {
     transform: scale(1.1);
 }
 
-/* Botón flotante sobre la imagen */
+
 .overlay-btn {
     position: absolute;
     bottom: 10px;
@@ -143,7 +143,7 @@ body {
     transform: translateX(-50%) translateY(0);
 }
 
-/* Texto Abajo */
+
 .info {
     padding: 15px;
     text-align: center;
@@ -158,10 +158,10 @@ body {
 .info p {
     margin: 5px 0 0;
     font-size: 0.9rem;
-    color: #9b59b6; /* Morado claro */
+    color: #9b59b6; 
 }
 
-/* --- 6. FOOTER --- */
+
 .footer-series {
     text-align: center;
     padding: 30px;

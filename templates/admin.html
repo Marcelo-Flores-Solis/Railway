@@ -19,7 +19,6 @@
                 
                 <nav class="sidebar-nav">
                     <a href="#" class="nav-item active">Mensajes</a>
-                    <a href="#" class="nav-item">Configuracion</a>
                     <a href="/" class="nav-item logout">Cerrar Sesion</a>
                 </nav>
             </aside>
@@ -32,6 +31,31 @@
 
                 <div class="content-container">
                     
+                    <div class="dashboard-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">📨</div>
+                            <div class="stat-info">
+                                <h3>Total</h3>
+                                <p class="stat-number">{TOTAL_MENSAJES}</p>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon">👥</div>
+                            <div class="stat-info">
+                                <h3>Usuarios</h3>
+                                <p class="stat-number">{TOTAL_USUARIOS}</p>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon">🕒</div>
+                            <div class="stat-info">
+                                <h3>Último</h3>
+                                <p class="stat-text">{ULTIMO_MENSAJE}</p>
+                            </div>
+                        </div>
+                    </div>
                     <div class="table-wrapper">
                         <table class="data-table">
                            <thead>
@@ -40,11 +64,12 @@
                                     <th>Nombre</th>
                                     <th>Correo</th>
                                     <th>Mensaje</th>
-                                    <th>Fecha</th> </tr>
-                            </thead>
-                            <tbody>
+                                    <th>Fecha</th> 
+                                </tr>
+                           </thead>
+                           <tbody>
                                 {FILAS_TABLA}
-                            </tbody>
+                           </tbody>
                         </table>
                     </div>
 

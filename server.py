@@ -4,7 +4,7 @@ import os
 import mimetypes
 from urllib.parse import parse_qs
 
-# IMPORTAMOS NUESTRO NUEVO ARCHIVO
+
 import database.db_manager as db_manager 
 
 PORT = int(os.environ.get("PORT", 8000))
@@ -34,22 +34,29 @@ class MiSitioHandler(http.server.BaseHTTPRequestHandler):
                 self.servir_statico()
                 return
 
-            # CASO ESPECIAL: ADMIN
             if path == '/admin':
                 archivo_path = os.path.join(TEMPLATE_DIR, 'admin.html')
                 with open(archivo_path, 'r', encoding='utf-8') as f:
                     content = f.read()
                 
-                # USAMOS DB_MANAGER PARA LEER LOS DATOS
+               
                 filas = db_manager.obtener_mensajes()
                 
+                
+                stats = db_manager.obtener_estadisticas()
+                
+               
                 content = content.replace('{FILAS_TABLA}', filas)
+                content = content.replace('{TOTAL_MENSAJES}', str(stats['total']))
+                content = content.replace('{TOTAL_USUARIOS}', str(stats['usuarios']))
+                content = content.replace('{ULTIMO_MENSAJE}', str(stats['ultimo']))
                 
                 self.send_response(200)
                 self.send_header('Content-type', 'text/html; charset=utf-8')
                 self.end_headers()
                 self.wfile.write(content.encode('utf-8'))
                 return
+           
 
             if path in rutas:
                 archivo_path = os.path.join(TEMPLATE_DIR, rutas[path])
@@ -105,7 +112,7 @@ class MiSitioHandler(http.server.BaseHTTPRequestHandler):
         
         print(f"Recibido: {nombre}")
 
-        # USAMOS DB_MANAGER PARA GUARDAR
+        
         db_manager.guardar_mensaje(nombre, email, mensaje)
 
         self.send_response(303) 

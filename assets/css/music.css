@@ -7,12 +7,12 @@ body {
     font-weight: 400;
 }
 
-/* --- 1. HEADER ESTRUCTURADO (Estilo Juegos pero Limpio) --- */
+/* Header */
 .header-music {
-    background-color: #000; /* Fondo negro sólido para el menú */
-    border-bottom: 1px solid #1db954; /* Línea verde sutil abajo */
+    background-color: #000;
+    border-bottom: 1px solid #1db954; 
     padding: 15px 0;
-    position: sticky; /* Se queda pegado arriba al bajar */
+    position: sticky; 
     top: 0;
     z-index: 100;
 }
@@ -22,11 +22,11 @@ body {
     margin: 0 auto;
     padding: 0 30px;
     display: flex;
-    justify-content: space-between; /* ¡Esto separa Logo y Menú! */
+    justify-content: space-between; 
     align-items: center;
 }
 
-/* LOGO GRANDE A LA IZQUIERDA */
+
 .logo-music {
     font-size: 1.8rem;
     font-weight: 700;
@@ -39,7 +39,7 @@ body {
 }
 .logo-icon { font-size: 2rem; }
 
-/* MENÚ A LA DERECHA */
+
 .nav-music {
     display: flex;
     gap: 25px;
@@ -54,15 +54,15 @@ body {
     transition: color 0.3s ease;
     display: flex;
     align-items: center;
-    gap: 8px; /* Espacio entre icono y texto */
+    gap: 8px; 
 }
 
-.nav-item:hover { color: #1db954; } /* Verde al pasar mouse */
+.nav-item:hover { color: #1db954; } 
 
-/* Botón Contacto Destacado */
+
 .btn-contact-music {
     background: #1db954;
-    color: black !important; /* Texto negro para contraste */
+    color: black !important;
     padding: 8px 20px;
     border-radius: 20px;
     font-weight: 700;
@@ -72,9 +72,9 @@ body {
     transform: scale(1.05);
 }
 
-/* --- 2. HERO CON VIDA (Imagen de Fondo) --- */
+/* Hero Section */
 .hero-music-visual {
-    /* Truco: Usamos tu imagen de juegos pero oscurecida y teñida de verde */
+
     background: linear-gradient(rgba(18, 18, 18, 0.8), #121212), url('/assets/imagenes/FondoMusica.jpg');
     background-size: cover;
     background-position: center;
@@ -87,18 +87,17 @@ body {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 15px;
-    background: -webkit-linear-gradient(#fff, #b3b3b3); /* Texto degradado metálico */
-    -webkit-background-clip: text;
+    background: -webkit-linear-gradient(#fff, #b3b3b3); 
     -webkit-text-fill-color: transparent;
 }
 
 .hero-content p {
-    color: #1db954; /* Verde brillante */
+    color: #1db954; 
     font-size: 1.3rem;
     font-weight: 600;
 }
 
-/* Decoración de onda de sonido */
+
 .sound-wave {
     color: #333;
     font-weight: 900;
@@ -114,7 +113,7 @@ body {
     100% { opacity: 0.3; letter-spacing: 5px; }
 }
 
-/* --- 3. GRID & CARDS (Igual que antes pero ajustado) --- */
+/* Grid de Música */
 .music-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

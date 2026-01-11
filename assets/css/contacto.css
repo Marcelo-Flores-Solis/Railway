@@ -1,19 +1,19 @@
-/* --- 1. CONSISTENCIA CON INDEX (Montserrat + Colores) --- */
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
 body {
-    background-color: #f4f4f4; /* Mismo gris suave del Index */
+    background-color: #f4f4f4; 
     font-family: 'Montserrat', sans-serif;
     color: #333;
     line-height: 1.6;
 }
 
-/* --- 2. HERO SECTION (Igual al Index) --- */
+/* Hero Section */
 .hero-contact {
-    /* EL MISMO GRADIENTE DEL INDEX */
+    
     background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
     color: white;
-    padding: 100px 0 140px; /* Mucho padding abajo para el efecto flotante */
+    padding: 100px 0 140px; 
     text-align: center;
     position: relative;
     border-bottom: 1px solid #34495e;
@@ -31,20 +31,20 @@ body {
     font-weight: 400;
 }
 
-/* --- 3. TARJETA FLOTANTE --- */
+/*tarjeta flotante*/
 .form-container {
     background: white;
     max-width: 600px;
-    margin: -100px auto 0; /* Sube 100px sobre el hero */
+    margin: -100px auto 0; 
     padding: 40px;
-    border-radius: 15px; /* Bordes redondeados igual que las tarjetas del Index */
+    border-radius: 15px; 
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     position: relative;
     z-index: 10;
     border: 1px solid #eee;
 }
 
-/* --- 4. FORMULARIO --- */
+/* Formulario */
 .form-group {
     margin-bottom: 25px;
 }
@@ -53,7 +53,7 @@ body {
     display: block;
     margin-bottom: 8px;
     font-weight: 700;
-    color: #2c3e50; /* Color oscuro del tema */
+    color: #2c3e50; 
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -71,10 +71,10 @@ body {
     background-color: #fafafa;
 }
 
-/* Efecto Focus (Cuando escribes) */
+
 .form-group input:focus, 
 .form-group textarea:focus {
-    border-color: #4ca1af; /* Color Teal del Index */
+    border-color: #4ca1af;
     background-color: white;
     outline: none;
     box-shadow: 0 0 0 4px rgba(76, 161, 175, 0.1);
@@ -84,16 +84,16 @@ textarea {
     resize: vertical;
 }
 
-/* --- 5. BOTÓN (Estilo Index) --- */
+
 .btn-submit {
-    /* Gradiente del Index */
+ 
     background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
     color: white;
     border: none;
     padding: 15px 30px;
     font-size: 1.1rem;
     font-weight: 700;
-    border-radius: 30px; /* Botón redondeado como el de "Explorar" */
+    border-radius: 30px;
     cursor: pointer;
     width: 100%;
     transition: transform 0.2s, box-shadow 0.2s;
@@ -104,11 +104,11 @@ textarea {
 .btn-submit:hover {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(44, 62, 80, 0.3);
-    /* Invertimos ligeramente el gradiente para efecto visual */
+  
     background: linear-gradient(135deg, #4ca1af 0%, #2c3e50 100%);
 }
 
-/* --- 6. TEXTOS Y FOOTER --- */
+
 .small-text {
     font-size: 0.85rem;
     color: #888;
@@ -116,7 +116,7 @@ textarea {
 }
 
 .site-footer {
-    background: #2c3e50; /* Usamos el color oscuro del tema */
+    background: #2c3e50; 
     color: #ccc;
     text-align: center;
     padding: 30px 0;
